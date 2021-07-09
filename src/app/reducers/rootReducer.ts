@@ -3,7 +3,7 @@ import { combineReducers } from '@reduxjs/toolkit';
 import todosReducers from './todosReducer';
 
 const rootReducer = combineReducers({
-  posts: todosReducers,
+  todos: todosReducers,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
