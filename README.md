@@ -1,15 +1,24 @@
-# Vite + React + Typescript + Eslint + Prettier
+# Random todos
 
-A starter for React with Typescript with the fast Vite and all static code testing with Eslint and formatting with Prettier.
+### What is this ?
+It's a basic list of todos with randomized data.
 
-![Vite + React + Typescript + Eslint + Prettier](/resources/screenshot.png)
+### Why whould I do that ?
+I wanted test some of [redux-toolkit](https://github.com/reduxjs/redux-toolkit) features but was too lazy to write the part were you write what you want.
 
-I found out about Vite and I wanted to have a boilerplate for the technologies that I use. You can find more about these in the following links: [Vite](https://github.com/vitejs/vite), [React](https://reactjs.org/), [Typescript](https://www.typescriptlang.org/), [Eslint](https://eslint.org/), [Prettier](https://prettier.io/).
-
-## Installation
-
-Clone the repo and run `yarn install`
-
-## Start
-
-After the successfull installation of the packages: `yarn start`
+I used [Fake Rest](https://fake.rest/) to create "fake" endpoints that return randomized data. It looks like this: 
+````json
+{
+  "data": {
+    "[10..15]": {
+      "id": "{{random.uuid()}}",
+      "task": "{{random.words(15)}}",
+      "done": "{{random.boolean()}}"
+    }
+  } 
+}
+````
+### What did I test
+Right now I played with:
+- [createEntityAdapter](https://redux-toolkit.js.org/api/createEntityAdapter)
+- [redux-persist](https://github.com/rt2zz/redux-persist) (wip)
