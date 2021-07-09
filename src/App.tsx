@@ -1,10 +1,9 @@
 import './App.css';
 
-import React, { useState } from 'react';
 import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 
 import { fetchAllTodos } from './app/reducers/todosReducer/todosReducer';
-import store from './app/store';
 
 const App = () => {
   const dispatch = useDispatch();
