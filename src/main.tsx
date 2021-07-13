@@ -5,9 +5,13 @@ import { createTheme, ThemeProvider } from '@material-ui/core/styles';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { persistStore } from 'redux-persist';
+import { PersistGate } from 'redux-persist/integration/react';
 
 import App from './App';
 import store from './app/store';
+
+let persistor = persistStore(store);
 
 ReactDOM.render(
   <React.StrictMode>
@@ -19,7 +23,9 @@ ReactDOM.render(
       })}>
       <CssBaseline />
       <Provider store={store}>
-        <App />
+        <PersistGate loading={null} persistor={persistor}>
+          <App />
+        </PersistGate>
       </Provider>
     </ThemeProvider>
   </React.StrictMode>,
