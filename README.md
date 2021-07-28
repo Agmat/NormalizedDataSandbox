@@ -21,4 +21,4 @@ I used [Fake Rest](https://fake.rest/) to create "fake" endpoints that return ra
 ### What did I test
 Right now I played with:
 - [createEntityAdapter](https://redux-toolkit.js.org/api/createEntityAdapter)
-- [redux-persist](https://github.com/rt2zz/redux-persist) (wip)
+- [redux-persist](https://github.com/rt2zz/redux-persist)
