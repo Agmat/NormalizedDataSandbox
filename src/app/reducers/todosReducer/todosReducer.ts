@@ -1,17 +1,18 @@
 import { createAsyncThunk, createEntityAdapter, createSlice } from '@reduxjs/toolkit';
 
 import { Todo } from '../../../types/Todo';
+import { RootState } from '../rootReducer';
 
 export const fetchAllTodos = createAsyncThunk('/posts', async () => {
   const response = await fetch(
-    'https://api.fake.rest/090aa8ae-ddef-4d3b-8d6f-4f0da2257828/todos',
+    'https://api.fake.rest/a9e1a93a-3cce-4dd6-91e4-3c37385d50aa/todos',
   );
   return await response.json();
 });
 
 export const fetchOneTodo = createAsyncThunk('/todo', async () => {
   const response = await fetch(
-    'https://api.fake.rest/090aa8ae-ddef-4d3b-8d6f-4f0da2257828/todo',
+    'https://api.fake.rest/a9e1a93a-3cce-4dd6-91e4-3c37385d50aa/todo',
   );
   return await response.json();
 });
@@ -39,7 +40,9 @@ const { actions, reducer } = createSlice({
 });
 
 export const { updateOne, removeOne } = actions;
-// @ts-ignore
-export const todosSelectors = todosAdapter.getSelectors((state) => state.todos);
+
+export const todosSelectors = todosAdapter.getSelectors(
+  (state: RootState) => state.todos,
+);
 
 export default reducer;
